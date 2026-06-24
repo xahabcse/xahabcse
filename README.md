@@ -20,27 +20,28 @@
 
 ## 💫 About Me
 
-```typescript
-const sahabuddin = {
-  role: "Software Engineer",
-  company: "OnnoRokom Projukti Limited",
-  education: "BSc in CSE — Jashore University of Science & Technology",
-  location: "Dhaka, Bangladesh 🇧🇩",
-  focus: ["Scalable Web Apps", "Cloud Architecture", "Clean Code"],
-  stack: {
-    backend:  [".NET / C#", "Node.js", "Hono.js"],
-    frontend: ["React 19", "TypeScript", "Vite"],
-    cloud:    ["Cloudflare Workers", "D1", "KV", "R2"],
-    data:     ["PostgreSQL", "SQL Server", "MongoDB", "Redis"],
-  },
-  motto: "Do what you can, with what you have.",
-};
-```
+<div align="center">
 
-- 🔭 Currently building **scalable full-stack products** with .NET, React & Cloudflare Workers
-- 🌱 Deep-diving into **distributed systems, cloud architecture & system design**
-- 💡 I care about **clean code, the right patterns, and exceptional user experience**
-- 📫 Reach me at **[sujoncep@gmail.com](mailto:sujoncep@gmail.com)** · Portfolio → **[xahabcse.me](https://xahabcse.me)**
+### ⚡ **Software Engineer crafting scalable, production-grade web applications**
+
+</div>
+
+> 💬 ***"Do what you can, with what you have."***
+
+Hi, I'm **Md. Sahabuddin Hossain** — a **Software Engineer** who loves turning **complex problems** into **clean, scalable solutions**, from **.NET** backends to **React** apps running on the **Cloudflare edge**. 🚀
+
+|  |  |
+|:--|:--|
+| 🏢 &nbsp; **Role** | **Software Engineer** @ **OnnoRokom Projukti Limited** |
+| 🎓 &nbsp; **Education** | **BSc in CSE** — Jashore University of Science & Technology |
+| 📍 &nbsp; **Location** | **Dhaka, Bangladesh** 🇧🇩 |
+| 🛠️ &nbsp; **Core Stack** | **.NET · C# · React · TypeScript · Cloudflare Workers** |
+| 🗄️ &nbsp; **Databases** | **PostgreSQL · SQL Server · MongoDB · Redis** |
+
+- 🔭 &nbsp; Currently building **scalable full-stack products** with **.NET, React & Cloudflare Workers**
+- 🌱 &nbsp; Deep-diving into **distributed systems, cloud architecture & system design**
+- 💡 &nbsp; I care about **clean code, the right patterns & exceptional user experience**
+- 📫 &nbsp; Reach me at **[sujoncep@gmail.com](mailto:sujoncep@gmail.com)** &nbsp;·&nbsp; Portfolio → **[xahabcse.me](https://xahabcse.me)**
 
 ---
 
