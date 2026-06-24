@@ -107,11 +107,21 @@ const sahabuddin = {
 
 ---
 
-## 📈 Contribution Graph
+## 📈 Contribution Activity
+
+#### 🐙 GitHub Contribution
 
 <div align="center">
 
-[![Sahabuddin's activity graph](https://github-readme-activity-graph.vercel.app/graph?username=xahabcse&bg_color=0d1117&color=00d4ff&line=7c3aed&point=ffffff&area=true&area_color=00d4ff&hide_border=true&custom_title=Issues,%20Pull%20Requests,%20Pushes%20%26%20Commits)](https://github.com/xahabcse)
+[![Sahabuddin's GitHub activity graph](https://github-readme-activity-graph.vercel.app/graph?username=xahabcse&bg_color=0d1117&color=00d4ff&line=7c3aed&point=ffffff&area=true&area_color=00d4ff&hide_border=true&custom_title=Issues,%20Pull%20Requests,%20Pushes%20%26%20Commits)](https://github.com/xahabcse)
+
+</div>
+
+#### 🦊 GitLab Contribution
+
+<div align="center">
+
+[![Sahabuddin's GitLab contributions](https://res.cloudinary.com/drwezeylt/image/upload/s--HLxMj66k--/v1782293065/portfolio/media/mfw1crn81xy97nhanvuo.png)](https://gitlab.com/sujoncep)
 
 </div>
 
