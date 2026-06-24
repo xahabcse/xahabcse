@@ -113,7 +113,7 @@ const sahabuddin = {
 
 <div align="center">
 
-[![Sahabuddin's GitHub activity graph](https://github-readme-activity-graph.vercel.app/graph?username=xahabcse&bg_color=0d1117&color=00d4ff&line=7c3aed&point=ffffff&area=true&area_color=00d4ff&hide_border=true&custom_title=Issues,%20Pull%20Requests,%20Pushes%20%26%20Commits)](https://github.com/xahabcse)
+[![Sahabuddin's GitHub contributions](https://res.cloudinary.com/drwezeylt/image/upload/s--eLYJulKd--/v1782293676/portfolio/media/mzyazve2a1npzcmxuida.png)](https://github.com/xahabcse)
 
 </div>
 
