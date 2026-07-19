@@ -68,17 +68,92 @@ function getTopLanguage(repos) {
     return `${sorted[0][0]} (${sorted[0][1]} repos)`;
 }
 
+function getAccountAge(createdAt) {
+    const created = new Date(createdAt);
+    const now = new Date();
+    let years = now.getFullYear() - created.getFullYear();
+    let months = now.getMonth() - created.getMonth();
+
+    if (months < 0) {
+        years--;
+        months += 12;
+    }
+
+    if (now.getDate() < created.getDate()) {
+        months--;
+
+        if (months < 0) {
+            years--;
+            months += 12;
+        }
+    }
+
+    const sinceLabel = created.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+    const yearLabel = years === 1 ? 'year' : 'years';
+    const monthLabel = months === 1 ? 'month' : 'months';
+
+    return `${years} ${yearLabel}, ${months} ${monthLabel} (GitHub since ${sinceLabel})`;
+}
+
+function buildBlock(user, repos, commits) {
+    const topLanguage = getTopLanguage(repos);
+    const uptime = getAccountAge(user.created_at);
+
+    return `<table>
+<tr>
+<td width="46%" valign="top">
+
+\`\`\`text
+                ##
+              ######
+            ##########
+          ##############
+        ##################
+      ######################
+    ##########################
+      ######################
+        ##################
+          ##############
+            ##########
+              ######
+                ##
+\`\`\`
+
+</td>
+<td width="54%" valign="top">
+
+\`\`\`text
+sahabuddin@xahabcse
+--------------------
+OS: ..................... Software Engineer
+Host: .................... OnnoRokom Projukti Limited
+Uptime: .................. ${uptime}
+Kernel: .................. .NET 8 / Hono / React 19
+IDE: ..................... VS Code, Claude Code
+
+Languages.Programming: ... C#, Python, TypeScript, JavaScript
+Languages.Web: ........... HTML, CSS, SQL
+
+- Contact ---------------------------------
+Email: ................... sujoncep@gmail.com
+Portfolio: ............... xahabcse.me
+LinkedIn: ................ linkedin.com/in/xahabcse
+
+- GitHub Stats (auto-updated daily) -------
+Public Repos: ............ ${user.public_repos}
+Followers: ............... ${user.followers}  ·  Following: ${user.following}
+Commits (last 12 months): . ${commits}
+Top Language: ............ ${topLanguage}
+\`\`\`
+
+</td>
+</tr>
+</table>`;
+}
+
 async function main() {
     const [user, repos, commits] = await Promise.all([fetchUser(), fetchRepos(), fetchYearCommits()]);
-    const topLanguage = getTopLanguage(repos);
-
-    const statsBlock = [
-        '- GitHub Stats (auto-updated daily) -------',
-        `Public Repos: ............ ${user.public_repos}`,
-        `Followers: ............... ${user.followers}  ·  Following: ${user.following}`,
-        `Commits (last 12 months): . ${commits}`,
-        `Top Language: ............ ${topLanguage}`
-    ].join('\n');
+    const block = buildBlock(user, repos, commits);
 
     const readme = fs.readFileSync(README_PATH, 'utf-8');
     const startMarker = '<!-- STATS:START -->';
@@ -93,7 +168,7 @@ async function main() {
 
     const before = readme.slice(0, startIndex + startMarker.length);
     const after = readme.slice(endIndex);
-    const updated = `${before}\n${statsBlock}\n${after}`;
+    const updated = `${before}\n${block}\n${after}`;
 
     fs.writeFileSync(README_PATH, updated);
     console.log('README stats updated.');

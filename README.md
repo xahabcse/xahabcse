@@ -20,6 +20,7 @@
 
 ## 🖥️ Neofetch
 
+<!-- STATS:START -->
 <table>
 <tr>
 <td width="46%" valign="top">
@@ -60,18 +61,17 @@ Email: ................... sujoncep@gmail.com
 Portfolio: ............... xahabcse.me
 LinkedIn: ................ linkedin.com/in/xahabcse
 
-<!-- STATS:START -->
 - GitHub Stats (auto-updated daily) -------
 Public Repos: ............ 47
 Followers: ............... 0  ·  Following: 3
 Commits (last 12 months): . 91
 Top Language: ............ C# (12 repos)
-<!-- STATS:END -->
 ```
 
 </td>
 </tr>
 </table>
+<!-- STATS:END -->
 
 ---
 
