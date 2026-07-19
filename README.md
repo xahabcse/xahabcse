@@ -49,7 +49,8 @@ sahabuddin@xahabcse
 --------------------
 OS: ..................... Software Engineer
 Host: .................... OnnoRokom Projukti Limited
-Uptime: .................. 1 year, 11 months (GitHub since Aug 2024)
+Uptime: .................. 1 year, 11 months
+Joined: .................. Aug 2024
 Kernel: .................. .NET 8 / Hono / React 19
 IDE: ..................... VS Code, Claude Code
 

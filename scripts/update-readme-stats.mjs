@@ -92,7 +92,7 @@ function getAccountAge(createdAt) {
     const yearLabel = years === 1 ? 'year' : 'years';
     const monthLabel = months === 1 ? 'month' : 'months';
 
-    return `${years} ${yearLabel}, ${months} ${monthLabel} (GitHub since ${sinceLabel})`;
+    return { duration: `${years} ${yearLabel}, ${months} ${monthLabel}`, since: sinceLabel };
 }
 
 function buildBlock(user, repos, commits) {
@@ -127,7 +127,8 @@ sahabuddin@xahabcse
 --------------------
 OS: ..................... Software Engineer
 Host: .................... OnnoRokom Projukti Limited
-Uptime: .................. ${uptime}
+Uptime: .................. ${uptime.duration}
+Joined: .................. ${uptime.since}
 Kernel: .................. .NET 8 / Hono / React 19
 IDE: ..................... VS Code, Claude Code
 
