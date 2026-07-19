@@ -1,0 +1,102 @@
+import fs from 'fs';
+
+const USERNAME = 'xahabcse';
+const TOKEN = process.env.GITHUB_TOKEN;
+const README_PATH = 'README.md';
+
+const headers = {
+    Authorization: `Bearer ${TOKEN}`,
+    Accept: 'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2022-11-28'
+};
+
+async function fetchUser() {
+    const res = await fetch(`https://api.github.com/users/${USERNAME}`, { headers });
+
+    return res.json();
+}
+
+async function fetchRepos() {
+    const res = await fetch(`https://api.github.com/users/${USERNAME}/repos?per_page=100&type=owner`, { headers });
+
+    return res.json();
+}
+
+async function fetchYearCommits() {
+    const to = new Date();
+    const from = new Date();
+    from.setFullYear(from.getFullYear() - 1);
+
+    const query = `
+        query($login: String!, $from: DateTime!, $to: DateTime!) {
+            user(login: $login) {
+                contributionsCollection(from: $from, to: $to) {
+                    totalCommitContributions
+                }
+            }
+        }
+    `;
+
+    const res = await fetch('https://api.github.com/graphql', {
+        method: 'POST',
+        headers: { ...headers, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            query,
+            variables: { login: USERNAME, from: from.toISOString(), to: to.toISOString() }
+        })
+    });
+    const json = await res.json();
+
+    return json.data?.user?.contributionsCollection?.totalCommitContributions ?? 0;
+}
+
+function getTopLanguage(repos) {
+    const counts = {};
+
+    for (const repo of repos) {
+        if (repo.language != null) {
+            counts[repo.language] = (counts[repo.language] ?? 0) + 1;
+        }
+    }
+
+    const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+
+    if (sorted.length === 0) {
+        return 'N/A';
+    }
+
+    return `${sorted[0][0]} (${sorted[0][1]} repos)`;
+}
+
+async function main() {
+    const [user, repos, commits] = await Promise.all([fetchUser(), fetchRepos(), fetchYearCommits()]);
+    const topLanguage = getTopLanguage(repos);
+
+    const statsBlock = [
+        '- GitHub Stats (auto-updated daily) -------',
+        `Public Repos: ............ ${user.public_repos}`,
+        `Followers: ............... ${user.followers}  ·  Following: ${user.following}`,
+        `Commits (last 12 months): . ${commits}`,
+        `Top Language: ............ ${topLanguage}`
+    ].join('\n');
+
+    const readme = fs.readFileSync(README_PATH, 'utf-8');
+    const startMarker = '<!-- STATS:START -->';
+    const endMarker = '<!-- STATS:END -->';
+    const startIndex = readme.indexOf(startMarker);
+    const endIndex = readme.indexOf(endMarker);
+
+    if (startIndex === -1 || endIndex === -1) {
+        console.error('STATS markers not found in README.md');
+        process.exit(1);
+    }
+
+    const before = readme.slice(0, startIndex + startMarker.length);
+    const after = readme.slice(endIndex);
+    const updated = `${before}\n${statsBlock}\n${after}`;
+
+    fs.writeFileSync(README_PATH, updated);
+    console.log('README stats updated.');
+}
+
+main();

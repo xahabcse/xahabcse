@@ -18,6 +18,63 @@
 
 ---
 
+## 🖥️ Neofetch
+
+<table>
+<tr>
+<td width="46%" valign="top">
+
+```text
+                ##
+              ######
+            ##########
+          ##############
+        ##################
+      ######################
+    ##########################
+      ######################
+        ##################
+          ##############
+            ##########
+              ######
+                ##
+```
+
+</td>
+<td width="54%" valign="top">
+
+```text
+sahabuddin@xahabcse
+--------------------
+OS: ..................... Software Engineer
+Host: .................... OnnoRokom Projukti Limited
+Uptime: .................. 1 year, 11 months (GitHub since Aug 2024)
+Kernel: .................. .NET 8 / Hono / React 19
+IDE: ..................... VS Code, Claude Code
+
+Languages.Programming: ... C#, Python, TypeScript, JavaScript
+Languages.Web: ........... HTML, CSS, SQL
+
+- Contact ---------------------------------
+Email: ................... sujoncep@gmail.com
+Portfolio: ............... xahabcse.me
+LinkedIn: ................ linkedin.com/in/xahabcse
+
+<!-- STATS:START -->
+- GitHub Stats (auto-updated daily) -------
+Public Repos: ............ 47
+Followers: ............... 0  ·  Following: 3
+Commits (last 12 months): . 91
+Top Language: ............ C# (12 repos)
+<!-- STATS:END -->
+```
+
+</td>
+</tr>
+</table>
+
+---
+
 ## 💫 About Me
 
 <div align="center">
