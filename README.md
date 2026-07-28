@@ -52,7 +52,7 @@ LinkedIn: ................ linkedin.com/in/xahabcse
 Public Repos: ............ 47
 Followers: ............... 0  ·  Following: 3
 Commits (last 12 months): . 91
-Top Language: ............ C# (12 repos)
+Top Language: ............ C# (13 repos)
 ```
 
 </td>
