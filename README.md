@@ -49,7 +49,7 @@ Portfolio: ............... xahabcse.me
 LinkedIn: ................ linkedin.com/in/xahabcse
 
 - GitHub Stats (auto-updated daily) -------
-Public Repos: ............ 46
+Public Repos: ............ 45
 Followers: ............... 0  ·  Following: 3
 Commits (last 12 months): . 1
 Top Language: ............ C# (13 repos)
