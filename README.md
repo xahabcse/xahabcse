@@ -50,8 +50,8 @@ LinkedIn: ................ linkedin.com/in/xahabcse
 
 - GitHub Stats (auto-updated daily) -------
 Public Repos: ............ 46
-Followers: ............... 0  ·  Following: 3
-Commits (last 12 months): . 1
+Followers: ............... 0  ·  Following: 4
+Commits (last 12 months): . 4
 Top Language: ............ C# (14 repos)
 ```
 
